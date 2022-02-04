@@ -23,7 +23,7 @@ Category getItemCategory();
 void modifyItem();
 
 //overload = op
-Item operator= (const Item &newItem);
+Item operator= ( Item newItem);
 
 private:
 

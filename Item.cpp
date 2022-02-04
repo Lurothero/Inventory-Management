@@ -75,3 +75,8 @@ void Item::modifyItem(){
   this->  item_category = newCategory.editCategory();//A new cat would be better
 
 }
+
+Item operator= ( Item newItem){
+
+  
+}
