@@ -15,11 +15,11 @@ Item();
 
 
 //Custom constructor
-Item (std::string name , const std::string code,std::string desc,std::string detail,int quantity, Category cat);
+Item (std::string name , const std::string code,std::string desc,std::string detail,int quantity, Category *cat);
 
 void printItem();
 
-Category getItemCategory();
+Category *getItemCategory();
 void modifyItem();
 
 //overload = op
@@ -33,7 +33,7 @@ std::string item_description;
 std::string item_detail;
 int item_quantity;
 
-Category item_category;//<-- address but i dont have time for that 
+Category *item_category;
 
 
 };

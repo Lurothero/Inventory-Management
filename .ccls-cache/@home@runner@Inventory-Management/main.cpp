@@ -20,7 +20,7 @@ Item obj1;
 
 
 
-Item obj2("Western Dairies' Milk","DAIRY-001","A milk product from Cayo","Fresh Everyday",5,cat2);
+Item obj2("Western Dairies' Milk","DAIRY-001","A milk product from Cayo","Fresh Everyday",5,&cat2);
 
 //testing class methods
 cat1.printCategory();
@@ -53,9 +53,9 @@ system3.searchItemByCategory();
 
 
 //Create a new item to add
-Item sports1("BasketBalls","SPORT-001","Standard size basketball","1 ft ball in diameter",10,cat3);
-Item sports2("Jet Ski","SPORT-002","100 HP Adult","Only for adults ",3,cat3);
-Item sports3("Bows","SPORT-003","Compound Bow","For 16+ young adults",43,cat3);
+Item sports1("BasketBalls","SPORT-001","Standard size basketball","1 ft ball in diameter",10,&cat3);
+Item sports2("Jet Ski","SPORT-002","100 HP Adult","Only for adults ",3,&cat3);
+Item sports3("Bows","SPORT-003","Compound Bow","For 16+ young adults",43,&cat3);
 
 system2.addNewItem(sports1);
 system2.addNewItem(sports2);

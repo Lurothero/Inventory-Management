@@ -12,14 +12,13 @@ item_detail = "DEFAULT DETAILS";
 item_quantity = 0;
 
 
-
 //I need a better solution here...
 Category c;
-item_category = c;
+item_category = &c;
 
 }
 
-Item::Item (std::string name , const std::string code,std::string desc,std::string detail,int quantity, Category cat) : item_code(code){
+Item::Item (std::string name , const std::string code,std::string desc,std::string detail,int quantity, Category &cat) : item_code(code){
 
   item_name = name;
   //const std::string item_code = code;
@@ -27,7 +26,7 @@ Item::Item (std::string name , const std::string code,std::string desc,std::stri
   item_detail = detail;
   item_quantity = quantity;
 
-  item_category = cat;
+  item_category = &cat;
 }
 
 
@@ -42,15 +41,15 @@ void Item::printItem(){
   std::cout<< "Detail: " << item_detail <<std::endl;
   std::cout<< "Quantity: " << item_quantity <<std::endl;
 
-  item_category.printCategory();
+  item_category->printCategory();
 
   
 }
 
 
-Category Item::getItemCategory(){
+Category *Item::getItemCategory(){
 
-  return this->item_category;
+  return item_category;
 
 }
 
@@ -72,6 +71,8 @@ void Item::modifyItem(){
   //is using this pratical in this context?
   this->item_name  = newName;
 
-  this->  item_category = newCategory.editCategory();//A new cat would be better
+  item_category = new Category;//won't it lose scope?
+
+
 
 }

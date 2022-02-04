@@ -9,15 +9,34 @@ InventorySystem::InventorySystem() {
   inventory_system_name = "Default Inventory System";
 }
 
+
+
+
+
+
 InventorySystem::InventorySystem(std::string name) {
   inventory_system_name = name;
 }
 
-InventorySystem::InventorySystem(std::string name, Item item1) {
+
+
+
+
+
+
+InventorySystem::InventorySystem(std::string name, Item &item1) {
 
   inventory_system_name = name;
-  inventory_item_list.push_back(item1);
+  inventory_item_list.push_back(&item1);
+
 }
+
+
+
+
+
+
+
 
 void InventorySystem::printInventorySystemName() {
 
@@ -32,9 +51,9 @@ void InventorySystem::printInventorySystemItems() {
 
   if (!inventory_item_list.empty()) {
 
-    for (Item itemIndex : inventory_item_list) {
+    for (Item *itemIndex : inventory_item_list) {
 
-      itemIndex.printItem();
+      itemIndex->printItem();
     }
 
   } else {
@@ -54,16 +73,16 @@ void InventorySystem::searchItemByCategory() {
     std::cin >> categorySearchQuery;
 
     // Search for the category
-    for (Item itemIndex : inventory_item_list) {
+    for (Item *itemIndex : inventory_item_list) {
 
 
 
 
       // Look for each item in the inventory
-      if (itemIndex.getItemCategory().get_category_name() ==
+      if (itemIndex->getItemCategory()->get_category_name() ==
           categorySearchQuery) {
         // We get a positive match
-        itemIndex.printItem();
+        itemIndex->printItem();
 
       } else {
 
@@ -76,14 +95,14 @@ void InventorySystem::searchItemByCategory() {
   }
 }
 
-void InventorySystem::addNewItem(Item itemToAdd){
+void InventorySystem::addNewItem(Item &itemToAdd){
 
 //push the new item to the vector
-  inventory_item_list.push_back(itemToAdd);
+  inventory_item_list.push_back(&itemToAdd);
 
 }
 
-void InventorySystem::editItem(Item itemToEdit){
+void InventorySystem::editItem(Item &itemToEdit){
 
   itemToEdit.modifyItem();
 
