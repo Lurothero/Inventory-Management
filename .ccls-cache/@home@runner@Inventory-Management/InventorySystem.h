@@ -8,25 +8,36 @@ public:
 
 //Constructor 
 InventorySystem();
+~InventorySystem();
 InventorySystem(std::string name);
-InventorySystem(std::string name, Item item1);
+InventorySystem(std::string name, Item &existingItem);
 
 
-void printInventorySystemName();
-void printInventorySystemItems();
+void searchItemByCategory() const;//By name or By ID
+void searchItemByCategory(Category &category_query) const;//By object
 
-void searchItemByCategory();//By name
+void addNewItem();//Add by calling a new item constructor 
+void addNewItem(Item &itemToAdd);//Add an existing item object to the list
+void editItem(Item &itemToEdit);//Edit an existing item
+void removeItem();//remove from vector and destroy it
 
-void addNewItem(Item itemToAdd);//Add an existing item object to the list
 void addNewCategory();
+void editCategory(Category &categoryToEdit);
 
 
-void editItem(Item itemToEdit);
+//Getters
+void getInventorySystemName() const;
+void getInventorySystemItems() const;
+
+//Setters
+void setInventoryName(std::string newInventoryName);
+
+//future operator overloading?
+
 
 private:
-
 std::string inventory_system_name;
-std::vector<Item> inventory_item_list;//maybe the address of the items is better?
+std::vector<Item *> inventory_item_list;
 
 
 };
