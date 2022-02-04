@@ -46,3 +46,10 @@ void Item::printItem(){
 
   
 }
+
+
+Category Item::getItemCategory(){
+
+  return item_category;
+
+}

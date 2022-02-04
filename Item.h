@@ -19,6 +19,8 @@ Item (std::string name , const std::string code,std::string desc,std::string det
 
 void printItem();
 
+Category getItemCategory();
+
 
 private:
 

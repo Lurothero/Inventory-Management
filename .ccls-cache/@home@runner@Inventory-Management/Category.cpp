@@ -18,3 +18,14 @@ void Category::printCategory(){
 std::cout <<"Category Name is: "<<category_name << std::endl;
 std::cout <<"Category ID is: "<<category_id << std::endl;
 }
+
+
+
+std::string Category:: get_category_id(){
+  return category_id;
+}
+
+std::string Category::get_category_name(){
+  return category_name;
+  
+}

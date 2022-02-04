@@ -41,4 +41,12 @@ system1.printInventorySystemItems();
 system2.printInventorySystemItems();
 system3.printInventorySystemItems();
 
+
+
+system1.searchItemByCategory();
+system2.searchItemByCategory();
+system3.searchItemByCategory();
+
+
+
 }
