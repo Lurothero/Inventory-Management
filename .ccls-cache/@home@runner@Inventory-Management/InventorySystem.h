@@ -17,6 +17,12 @@ void printInventorySystemItems();
 
 void searchItemByCategory();//By name
 
+void addNewItem(Item itemToAdd);//Add an existing item object to the list
+void addNewCategory();
+
+
+void editItem(Item itemToEdit);
+
 private:
 
 std::string inventory_system_name;

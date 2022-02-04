@@ -56,6 +56,9 @@ void InventorySystem::searchItemByCategory() {
     // Search for the category
     for (Item itemIndex : inventory_item_list) {
 
+
+
+
       // Look for each item in the inventory
       if (itemIndex.getItemCategory().get_category_name() ==
           categorySearchQuery) {
@@ -71,4 +74,17 @@ void InventorySystem::searchItemByCategory() {
 
     std::cout << "You are attempting to search in an empty inventory system \n" << std::endl;
   }
+}
+
+void InventorySystem::addNewItem(Item itemToAdd){
+
+//push the new item to the vector
+  inventory_item_list.push_back(itemToAdd);
+
+}
+
+void InventorySystem::editItem(Item itemToEdit){
+
+  itemToEdit.modifyItem();
+
 }

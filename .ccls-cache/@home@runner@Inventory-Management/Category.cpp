@@ -29,3 +29,26 @@ std::string Category::get_category_name(){
   return category_name;
   
 }
+
+
+void Category::createNewCategory(){
+
+
+  
+}
+
+void Category::editCategory(){
+
+//Change the name of the Category
+std::string newCategoryName;
+std::string newCategoryID;//realistically this should not be modified
+
+std::cout << "Rename category name to? \n" <<std::endl;
+std::cin >> newCategoryName;
+this->category_name = newCategoryName;
+
+std::cout << "Rename category ID to? \n" <<std::endl;
+std::cin >> newCategoryID;
+this->category_id = newCategoryID;
+
+}

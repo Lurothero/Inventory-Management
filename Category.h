@@ -12,8 +12,14 @@ Category();
 
 Category(std::string name, std::string id);
 
+void createNewCategory();
+
 std::string get_category_id();
 std::string get_category_name();
+
+
+
+void editCategory();
 
 //Class Methods
 void printCategory();

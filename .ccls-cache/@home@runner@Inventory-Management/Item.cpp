@@ -50,6 +50,28 @@ void Item::printItem(){
 
 Category Item::getItemCategory(){
 
-  return item_category;
+  return this->item_category;
+
+}
+
+void Item::modifyItem(){
+
+  //Start changing Item data members except code
+
+
+  //Temp variables for updating item info
+  std::string newName;
+  std::string newDescription;
+  std::string newDetail;
+  int newQuantity;
+  Category newCategory;
+
+
+  std::cout << "Rename to? \n";
+  std::cin >>  newName  ;
+  //is using this pratical in this context?
+  this->item_name  = newName;
+
+  this->  item_category = newCategory.editCategory();//A new cat would be better
 
 }
